@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<body>
+    
+    <canvas id="myCanvas" width="500" height="500" style="border:1px solid #d3d3d3;background-color:pink">
+Your browser does not support the HTML5 canvas tag.</canvas>
+    <script>
+
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+        function letterB(x, y,color){
+            //starts at 5,50
+            ctx.strokeStyle =color;
+            ctx.beginPath();
+            
+            ctx.moveTo(x, y);
+            ctx.lineTo(x, y+100);
+            ctx.lineTo(x*10, y+100);
+            ctx.moveTo(x, y);
+            ctx.lineTo(x*10, y);
+            ctx.moveTo(x*10, y);
+            ctx.lineTo(x, y+15);
+            ctx.moveTo(x, y+15);
+            ctx.lineTo(x*10, y+100);
+            ctx.stroke();
+        }
+        function letterE(x, y,color){
+            //starts at 75,150
+           ctx.strokeStyle =color;
+          ctx.beginPath();
+           ctx.moveTo(x, y);
+           ctx.lineTo(x, y-100);
+           ctx.lineTo(x+50, y-100);
+           ctx.moveTo(x, y-50);
+           ctx.lineTo(x+50, y-50);
+           ctx.moveTo(x, y);
+           ctx.lineTo(x+50, y);
+            ctx.stroke();
+        }
+        function letterN(x, y,color){
+             ctx.strokeStyle =color;
+          ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.lineTo(x, y-100);
+        ctx.lineTo(x+100, y);
+        ctx.moveTo(x+100, y);
+        ctx.lineTo(x+100, y-100);
+        ctx.stroke();
+        }
+function draw(){
+  ctx.clearRect(0,0,c.width, c.height);
+  ctx.beginPath();
+  letterB(5,50,"RED");
+    letterE(75,150,"BLUE");
+     letterN(150,150,"Green");
+    
+
+
+  
+  window.requestAnimationFrame(draw)
+}
+//function takes color,height, width param
+////100 high, 50 wide, 25 px gap
+draw()
+</script>
+    
+    </body>
+</html>
